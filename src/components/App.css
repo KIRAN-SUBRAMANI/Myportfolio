@@ -1,0 +1,211 @@
+/* ---- Base ---- */
+:root {
+  --bg: #0b1020;
+  --text: #eaf2ff;
+  --muted: #b9c4d6;
+  --card: #11172a;
+  --border: #2a3552;
+  --brand: #4ea1ff;
+  --brand-2: #7a5cff;
+  --accent: #ffd54f;
+  --nav-h: 64px;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: #0a0f1f;
+  line-height: 1.6;
+}
+
+/* ---- Navbar ---- */
+/* permanent fixed navbar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  z-index: 9999;
+  background: rgba(10,15,31,0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(10,15,31,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.8rem 1.2rem;
+}
+/* Logo wrapper */
+.logo {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: clamp(1.1rem, 1rem + 0.8vw, 1.6rem);
+}
+
+/* Gradient animated text */
+.logo__text {
+  background: linear-gradient(90deg, #4ea1ff, #ffd54f, #7a5cff, #4ea1ff);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 6s linear infinite;
+}
+
+/* Gradient underline effect */
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffd54f, #7a5cff, transparent);
+  filter: blur(.25px);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: underline-scan 2.8s ease-in-out infinite;
+  opacity: .85;
+}
+
+/* Hover glow */
+.logo:hover .logo__text {
+  filter: drop-shadow(0 0 6px rgba(126,92,255,0.6));
+}
+
+/* Keyframes */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+@keyframes underline-scan {
+  0%   { transform: scaleX(0); opacity:.2; }
+  20%  { transform: scaleX(1); opacity:1; }
+  60%  { transform: scaleX(1); opacity:1; }
+  100% { transform: scaleX(0); opacity:.2; }
+}
+
+.nav__logo { color: #fff; font-weight: 800; text-decoration: none; letter-spacing: .5px; }
+.nav__links a {
+  color: var(--text); text-decoration: none; margin-left: 1rem; font-size: .95rem; opacity: .9;
+}
+.nav__links a:hover { opacity: 1; color: var(--accent); }
+
+/* ---- Sections ---- */
+.section { padding: 80px 16px; }
+.section--alt { background: #0c1226; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+
+.section__title {
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+  margin: 0 0 18px 0; font-weight: 800;
+}
+
+/* ---- Hero (tightened) ---- */
+.home-section {
+  display: grid;
+  place-items: center;
+  /* ↓ smaller section height so there isn't a tall empty area */
+  min-height: 68vh;           /* was 88vh */
+  /* ↓ trim vertical padding, remove bottom padding */
+  padding: 1.25rem 1.25rem 0; /* was 2rem all around */
+  background: #0a0f1f;
+}
+
+/* ↓ slightly reduce spacing above the buttons */
+.home-subtitle {
+  font-size: clamp(1rem, .8rem + .6vw, 1.25rem);
+  opacity: .95;
+  margin-bottom: 1.1rem;      /* was 1.6rem */
+}
+
+/* ↓ tighten the button group gap & top margin if needed */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;                  /* was 12px */
+  flex-wrap: wrap;
+  margin-top: 10px;           /* add/keep small margin */
+}
+/* ---- About ---- */
+.two-col { display: grid; grid-template-columns: 260px 1fr; gap: 28px; }
+.about__photo {
+  height: 260px; border-radius: 18px; background:
+  linear-gradient(135deg, #4ea1ff, #7a5cff);
+  box-shadow: 0 8px 32px rgba(0,0,0,.35);
+}
+.about__bullets { margin: 14px 0 0; padding-left: 18px; }
+
+/* ---- Skills ---- */
+.skill-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px; list-style: none; padding: 0; margin: 0;
+}
+.skill-chip {
+  background: var(--card); border: 1px solid var(--border);
+  padding: .6rem .8rem; border-radius: 10px; text-align: center; font-weight: 600;
+}
+
+/* ---- Cards ---- */
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.card h3 { margin: 0 0 .4rem; }
+.card .tagline { color: var(--muted); font-size: .95rem; margin-top: .3rem; }
+.card__links { display: flex; gap: 8px; margin-top: 10px; }
+
+/* ---- Timeline ---- */
+.timeline-item { border-left: 3px solid var(--brand); padding-left: 14px; margin: 16px 0; }
+.timeline-head { display: flex; flex-direction: column; gap: 4px; }
+.list { margin: 8px 0 0 0; }
+.muted { color: var(--muted); }
+
+/* ---- Contact ---- */
+/* Contact Row */
+.contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;        /* add spacing between buttons */
+  flex-wrap: wrap;
+  margin-top: 18px; /* space above the button row */
+}
+
+/* Optional: make buttons consistent size */
+.contact-row .btn {
+  min-width: 140px;
+  text-align: center;
+}
+
+
+/* ---- Footer ---- */
+.footer {
+  text-align: center; padding: 28px 16px; color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .two-col { grid-template-columns: 1fr; }
+  .nav__links { display: none; } /* keep it simple; can add a burger later */
+}
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
