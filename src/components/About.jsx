@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css"; // if you keep styles separate
+import myPic from "../assets/my-pic.jpeg";
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
       <div className="container two-col">
         {/* Replace gradient with your actual image */}
         <div className="about__photo">
-          <img src="/src/assets/my-pic.jpeg" alt="Kiran portrait" />
+          <img src={myPic} alt="Kiran portrait" />
         </div>
 
         <div>
