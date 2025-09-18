@@ -4,10 +4,9 @@
   top: 0;
   width: 100%;
   background: rgba(10, 15, 31, 0.8);
-  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 2000; /* keep above page content */
+  z-index: 1000;
 }
 
 .navbar-container {
@@ -17,23 +16,21 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 1.2rem;
-  min-height: 64px; /* consistent height for mobile top offset */
 }
 
 /* Logo */
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #fff;
+  color: white;
   text-decoration: none;
   letter-spacing: 0.5px;
 }
 
-/* Links (desktop default) */
+/* Links */
 .nav-links {
   display: flex;
   gap: 1.5rem;
-  align-items: center;
 }
 
 .nav-links a {
@@ -52,8 +49,8 @@
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 26px;
-  height: 20px;
+  width: 24px;
+  height: 18px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -62,40 +59,26 @@
 .hamburger span {
   display: block;
   height: 3px;
-  background: #fff;
+  background: white;
   border-radius: 2px;
   transition: 0.3s;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  /* Turn desktop row into hidden slideout by default */
   .nav-links {
     position: absolute;
-    top: 64px;             /* matches navbar height */
-    right: 12px;           /* small gutter from edge */
+    top: 64px;
+    right: 0;
     background: #0a0f1f;
     flex-direction: column;
-    align-items: stretch;
-    padding: 0.8rem;
-    gap: 0.25rem;
-    width: 220px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-    transform: translateX(120%);
-    transition: transform 0.28s ease;
-    will-change: transform;
-    z-index: 3000;         /* ensure above hero/buttons */
-  }
-
-  .nav-links a {
-    padding: 0.7rem 0.6rem; /* bigger tap targets */
-    border-radius: 6px;
-  }
-
-  .nav-links a:active {
-    background: rgba(255,255,255,0.06);
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+    width: 200px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
 
   .nav-links.open {
@@ -108,29 +91,12 @@
 
   /* Hamburger Animation */
   .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(4px, 4px);
   }
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(4px, -4px);
   }
 }
-/* Click-outside overlay for mobile menu */
-.nav-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  border: 0;
-  padding: 0;
-  margin: 0;
-  z-index: 2500; /* below .nav-links (3000) but above page */
-}
-
-/* Optional: reduce motion users get no slide animation */
-@media (prefers-reduced-motion: reduce) {
-  .nav-links { transition: none !important; }
-  .hamburger span { transition: none !important; }
-}
-
