@@ -1,6 +1,25 @@
 import React from "react";
 import "./Skills.css";
 
+// Languages
+import cLogo from "../assets/C_Programming_Language.svg.png";
+import jsLogo from "../assets/javascript.png";
+import pyLogo from "../assets/python.jpeg";
+
+// Front-End
+import htmlLogo from "../assets/html.png";
+import cssLogo from "../assets/css.png";
+import reactLogo from "../assets/react.png";
+
+// Back-End
+import springLogo from "../assets/spring.png";
+import mongoLogo from "../assets/mongodb.png";
+import sqlLogo from "../assets/sql.png";
+
+// Tools
+import githubLogo from "../assets/github.png";
+import vscodeLogo from "../assets/vscode.png";
+
 export default function Skills() {
   return (
     <section id="skills" className="section">
@@ -13,15 +32,15 @@ export default function Skills() {
             <h3>Languages</h3>
             <div className="skills-list">
               <div className="skill-item">
-                <img src="/src/assets/C_Programming_Language.svg.png" alt="C" />
+                <img src={cLogo} alt="C" />
                 <span>C</span>
               </div>
               <div className="skill-item">
-                <img src="/src/assets/javascript.png" alt="JavaScript" />
+                <img src={jsLogo} alt="JavaScript" />
                 <span>JavaScript</span>
               </div>
               <div className="skill-item">
-                <img src="/src/assets/python.jpeg" alt="Python" />
+                <img src={pyLogo} alt="Python" />
                 <span>Python</span>
               </div>
             </div>
@@ -32,15 +51,15 @@ export default function Skills() {
             <h3>Front-End</h3>
             <div className="skills-list">
               <div className="skill-item">
-                <img src="/src/assets/html.png" alt="HTML" />
+                <img src={htmlLogo} alt="HTML" />
                 <span>HTML</span>
               </div>
               <div className="skill-item">
-                <img src="/src/assets/css.png" alt="CSS" />
+                <img src={cssLogo} alt="CSS" />
                 <span>CSS</span>
               </div>
               <div className="skill-item">
-                <img src="/src/assets/react.png" alt="React" />
+                <img src={reactLogo} alt="React" />
                 <span>React</span>
               </div>
             </div>
@@ -51,15 +70,15 @@ export default function Skills() {
             <h3>Back-End</h3>
             <div className="skills-list">
               <div className="skill-item">
-                <img src="/src/assets/spring.png" alt="Spring" />
+                <img src={springLogo} alt="Spring" />
                 <span>Spring</span>
               </div>
               <div className="skill-item">
-                <img src="/src/assets/mongodb.png" alt="MongoDB" />
+                <img src={mongoLogo} alt="MongoDB" />
                 <span>MongoDB</span>
               </div>
               <div className="skill-item">
-                <img src="/src/assets/sql.png" alt="SQL" />
+                <img src={sqlLogo} alt="SQL" />
                 <span>SQL</span>
               </div>
             </div>
@@ -70,11 +89,11 @@ export default function Skills() {
             <h3>Tools</h3>
             <div className="skills-list">
               <div className="skill-item">
-                <img src="/src/assets/github.png" alt="GitHub" />
+                <img src={githubLogo} alt="GitHub" />
                 <span>GitHub</span>
               </div>
               <div className="skill-item">
-                <img src="/src/assets/vscode.png" alt="VS Code" />
+                <img src={vscodeLogo} alt="VS Code" />
                 <span>VS Code</span>
               </div>
             </div>
