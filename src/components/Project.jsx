@@ -16,11 +16,11 @@ const PROJECTS = [
     code: "https://github.com/KIRAN-SUBRAMANI/Astrology_Portfolio"
   },
   {
-    title: "QuizCraft",
-    desc: "Creates quizzes from pasted text; export to CSV/PDF. Keyboard-first UX.",
-    tech: ["React", "Vite"],
-    live: "#",
-    code: "#"
+    title: "Gold Price ML Model",
+    desc: "Built an ML model to predict daily gold prices using historical data, covering the full workflow from preprocessing to evaluation.",
+    tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-Learn"],
+    live: "https://github.com/KIRAN-SUBRAMANI/Gold-price-prediction/blob/main/Midterm_Project%20KIRAN_SUBRAMANI.ipynb",
+    code: "https://github.com/KIRAN-SUBRAMANI/Gold-price-prediction"
   }
 ];
 
