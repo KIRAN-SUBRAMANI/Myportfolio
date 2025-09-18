@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css"; // if you keep styles separate
-import myPic from "../assets/my-pic.jpeg";
+import myPic from "../assets/img.ico";
 
 export default function About() {
   return (

@@ -9,11 +9,11 @@ const PROJECTS = [
     code: "https://github.com/KIRAN-SUBRAMANI/College_Project", // or GitHub repo if uploaded
   },
   {
-    title: "CampusHub",
-    desc: "Event discovery app for students. Users can post, save and share events.",
-    tech: ["React", "Node", "MongoDB"],
-    live: "#",
-    code: "#"
+    title: "Astrology Services Portfolio",
+    desc: "React-based astrology portfolio website highlighting key spiritual services, testimonials, and interactive contact features.",
+    tech: ["React", "JavaScript", "HTML", "CSS"],
+    live: "https://astrology-portfolio-three.vercel.app/",
+    code: "https://github.com/KIRAN-SUBRAMANI/Astrology_Portfolio"
   },
   {
     title: "QuizCraft",
