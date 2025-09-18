@@ -150,5 +150,4 @@
   .nav-links { transition: none !important; }
   .hamburger span { transition: none !important; }
 }
-/* Prevent content from sitting under the fixed header */
-body { padding-top: 64px; } /* match .navbar min-height */
+
