@@ -1,4 +1,5 @@
  import React from "react";
+ import kiran from "../assets/Kiran_Subramani.pdf";
 
 export default function Contact() {
   return (
@@ -11,7 +12,7 @@ export default function Contact() {
         <div className="contact-row">
           <a href="mailto:kiransubramani0708@gmail.com" className="btn primary-btn">Email Me</a>
           <a href="https://www.linkedin.com/in/kiran-subramani6199/" target="_blank" rel="noreferrer" className="btn secondary-btn">LinkedIn</a>
-          <a href="/src/assets/Kiran_Subramani.pdf" className="btn secondary-btn">Resume</a>
+          <a href={kiran} className="btn secondary-btn">Resume</a>
         </div>
       </div>
     </section>
