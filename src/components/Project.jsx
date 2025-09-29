@@ -12,8 +12,8 @@ const PROJECTS = [
     title: "Astrology Services Portfolio",
     desc: "React-based astrology portfolio website highlighting key spiritual services, testimonials, and interactive contact features.",
     tech: ["React", "JavaScript", "HTML", "CSS"],
-    live: "https://astrology-portfolio-6r3x.vercel.app/",
-    code: "https://github.com/KIRAN-SUBRAMANI/Astrology-Portfolio"
+    live: "",
+    code: ""
   },
   {
     title: "Gold Price ML Model",
